@@ -21,7 +21,7 @@ export const getMunicipios = async (uf: string, provider: string) => {
       name: municipio.nome,
       ibge_code: municipio.codigo_ibge
     }));
-  } else if (API_PROVIDER === 'ibge') {
+  } else if (API_PROVIDER=== 'ibge') {
     municipios = response.data.map((municipio: any) => ({
       name: municipio.nome,
       ibge_code: municipio.id
