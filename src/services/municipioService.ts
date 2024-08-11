@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Municipio } from '../interfaces/municipio';
 
 const API_PROVIDER = process.env.API_PROVIDER || 'brasilapi'; 
 
@@ -14,19 +15,22 @@ export const getMunicipios = async (uf: string, provider: string) => {
   }
 
   const response = await axios.get(url);
-  let municipios;
 
-  if (API_PROVIDER === 'brasilapi') {
-    municipios = response.data.map((municipio: any) => ({
-      name: municipio.nome,
-      ibge_code: municipio.codigo_ibge
-    }));
-  } else if (API_PROVIDER=== 'ibge') {
-    municipios = response.data.map((municipio: any) => ({
-      name: municipio.nome,
-      ibge_code: municipio.id
-    }));
-  }
+  const municipios: Municipio[] = (response.data as any[]).map((municipio: any) => {
+    
+    if (API_PROVIDER === 'brasilapi') {
+      return {
+        name: municipio.nome,
+        ibge_code: municipio.codigo_ibge,
+      };
+    } else if (API_PROVIDER === 'ibge') {
+      return {
+        name: municipio.nome,
+        ibge_code: municipio.id,
+      };
+    }
+    throw new Error('Provider não definido ou inválido.');
+  });
 
   return municipios;
 };

@@ -4,6 +4,7 @@ import { getMunicipios } from '../services/municipioService';
 export const listarMunicipios = async (req: Request, res: Response) => {
   try {
     const uf = req.query.uf as string;
+
     console.log('UF:', uf); 
     
     if (!uf) {
@@ -11,7 +12,9 @@ export const listarMunicipios = async (req: Request, res: Response) => {
     }
 
     const provider = process.env.API_PROVIDER;
+
     console.log('Provider:', provider); 
+
     if (!provider) {
       return res.status(500).json({ error: 'Provider não definido.' });
     }
@@ -20,6 +23,7 @@ export const listarMunicipios = async (req: Request, res: Response) => {
     res.json(municipios);
   } catch (error) {
     console.error(error);
+    
     res.status(500).json({ error: 'Erro ao buscar municípios.' });
   }
 };
