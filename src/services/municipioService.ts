@@ -17,7 +17,7 @@ export const getMunicipios = async (uf: string, provider: string) => {
   const response = await axios.get(url);
 
   const municipios: Municipio[] = (response.data as any[]).map((municipio: any) => {
-    
+
     if (API_PROVIDER === 'brasilapi') {
       return {
         name: municipio.nome,
