@@ -10,9 +10,10 @@
     "resolveJsonModule": true, 
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "express", "jest"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*ts"],
   "exclude": ["node_modules"]
 }
 
