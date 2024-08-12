@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { listarMunicipios } from '../controllers/municipioController';
+import { listarMunicipios } from '../controllers/municipioController.js';
 
 const router = Router();
 

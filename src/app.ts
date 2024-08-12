@@ -1,5 +1,5 @@
 import express from 'express';
-import municipioRoutes from './routes/municipioRoutes';
+import municipioRoutes from './routes/municipioRoutes.js';
 
 const app = express();
 

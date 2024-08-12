@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getMunicipios } from '../services/municipioService';
+import { getMunicipios } from '../services/municipioService.js';
 
 export const listarMunicipios = async (req: Request, res: Response) => {
   try {
