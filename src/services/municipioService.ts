@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Municipio } from '../interfaces/municipio.js';
+import { Municipio } from '../interfaces/municipio';
 
 const API_PROVIDER = process.env.API_PROVIDER || 'brasilapi'; 
 
