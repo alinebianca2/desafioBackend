@@ -1,3 +1,15 @@
 node_modules
 dist
 .env
+
+# Jest cache
+jest-cache/
+
+# Jest coverage
+coverage/
+
+# Arquivos temporários
+*.log
+
+# Diretórios de testes
+tests/
