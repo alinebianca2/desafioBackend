@@ -8,8 +8,7 @@ jest-cache/
 # Jest coverage
 coverage/
 
-# Arquivos temporários
 *.log
 
-# Diretórios de testes
-tests/
+tests/*.log
+tests/coverage/
